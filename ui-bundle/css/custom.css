@@ -1,0 +1,8 @@
+.navbar {
+    background: white;
+    border-bottom: 2px solid #222222;
+}
+
+.navbar-end {
+    background: #000000;
+}
