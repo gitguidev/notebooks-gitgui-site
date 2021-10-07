@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Notebooks :: Notebooks GitGui.dev</title>
+    <title>Troubleshooting :: Notebooks GitGui.dev</title>
     <meta name="generator" content="Antora 2.3.4">
 <link rel="stylesheet" href="../../ui-bundle/css/site.css">
 <link rel="stylesheet" href="../../ui-bundle/css/custom.css">    <script>var uiRootPath = '../../ui-bundle'</script>
@@ -72,7 +72,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="wemos_pc.html">Power Consumption</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="wemos_troubleshooting.html">Troubleshooting</a>
   </li>
 </ul>
@@ -104,27 +104,44 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Notebooks</a></li>
+    <li>Wemos D1 Mini</li>
+    <li><a href="wemos_troubleshooting.html">Troubleshooting</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/adria/Development/Personal/docs-site/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/adria/Development/Personal/docs-site/docs/modules/ROOT/pages/wemos_troubleshooting.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Notebooks</h1>
+<h1 class="page">Troubleshooting</h1>
+<div class="sect1">
+<h2 id="_uploading_to_wemos_is_not_working"><a class="anchor" href="#_uploading_to_wemos_is_not_working"></a>Uploading to wemos is not working</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This site has been generated with Antora:
-The multi-repository documentation site generator for tech writers who writing in AsciiDoc.</p>
+<p>The last time uploading to wemos was not working on Ubuntu was a problem with the kernel:</p>
 </div>
 <div class="paragraph">
-<p>Here&#8217;s a quick reference to AsciiDoc syntax:
-<a href="https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#literals-and-source-code" class="bare">https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#literals-and-source-code</a></p>
+<p>With the version 5.11.0-36 is working fine: linux-image-5.11.0-36-generic</p>
+</div>
+<div class="paragraph">
+<p>I found the solution here:
+<a href="https://github.com/espressif/esptool/issues/656" class="bare">https://github.com/espressif/esptool/issues/656</a></p>
+</div>
+<div class="paragraph">
+<p>So, to set the default version in Grub I did:
+<a href="https://unix.stackexchange.com/questions/198003/set-default-kernel-in-grub" class="bare">https://unix.stackexchange.com/questions/198003/set-default-kernel-in-grub</a></p>
+</div>
+<div class="paragraph">
+<p>To configure APT to keep the version I did:
+<a href="https://askubuntu.com/questions/999529/pin-kernel-version/1049234#1049234" class="bare">https://askubuntu.com/questions/999529/pin-kernel-version/1049234#1049234</a></p>
+</div>
+</div>
 </div>
 </article>
   </div>
